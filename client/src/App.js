@@ -40,7 +40,7 @@ const App = () => {
       //map style
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       onViewportChange={setViewport}
-      onDblClick={showAddMarkerPopup}
+      onClick={ev=>ev.rightButton && showAddMarkerPopup(ev)}
     >
       {logEntries.map(entry => (
         <React.Fragment key={entry._id}>
